@@ -3,22 +3,20 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
     id 'androidx.navigation.safeargs.kotlin'
     id "kotlin-android-extensions"
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 32
 
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.nisaefendioglu.daggerhiltinandroidwithexample"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 14
-        versionName '1.5.0'
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 1
+        versionName '1.0'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -45,8 +43,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
-    implementation files('libs/jj2000_imageutil.jar')
 
+    implementation 'com.android.support:multidex:1.0.3'
 
     // Dagger-Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
